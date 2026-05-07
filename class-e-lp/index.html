@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>経営者交流ハンガリーワイン会 | 2026年5月25日(月) 渋谷</title>
-  <meta name="description" content="20名限定。希少なハンガリーワインと、知性ある対話。2026年5月25日(月)18:30開場、渋谷 The Place ラウンジにて開催。">
+  <meta name="description" content="20名限定。希少なハンガリーワインと、知性ある対話。2026年5月25日(月)19:00開始、渋谷 The Place ラウンジにて開催。">
 
   <!-- OGP / Twitter Card -->
   <meta property="og:title" content="経営者交流ハンガリーワイン会 | 2026年5月25日(月)">
   <meta property="og:description" content="20名限定。希少なハンガリーワインと、知性ある対話。渋谷 The Place ラウンジにて開催。">
-  <meta property="og:image" content="images/ogp.jpg">
+  <meta property="og:image" content="images/hero.png">
   <meta property="og:url" content="https://m-tkd.github.io/IZAJAPAN/class-e-lp/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="経営者交流ハンガリーワイン会">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="経営者交流ハンガリーワイン会 | 2026年5月25日(月)">
   <meta name="twitter:description" content="20名限定。希少なハンガリーワインと、知性ある対話。渋谷 The Place ラウンジにて開催。">
-  <meta name="twitter:image" content="images/ogp.jpg">
+  <meta name="twitter:image" content="images/hero.png">
 
   <!-- Schema.org Event 構造化データ -->
   <script type="application/ld+json">
@@ -24,8 +24,8 @@
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "経営者交流ハンガリーワイン会 (Class-E)",
-    "startDate": "2026-05-25T18:30:00+09:00",
-    "endDate": "2026-05-25T20:30:00+09:00",
+    "startDate": "2026-05-25T19:00:00+09:00",
+    "endDate": "2026-05-25T21:00:00+09:00",
     "location": {
       "@type": "Place",
       "name": "The Place ラウンジ",
@@ -82,26 +82,33 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- ハンガリーカラーバー（赤・白・緑） -->
+  <div class="hungary-bar" aria-hidden="true">
+    <span class="hungary-bar__stripe hungary-bar__stripe--red"></span>
+    <span class="hungary-bar__stripe hungary-bar__stripe--white"></span>
+    <span class="hungary-bar__stripe hungary-bar__stripe--green"></span>
+  </div>
+
   <!-- ① ヒーロー(ファーストビュー) -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <!-- [画像差し替え]: 暗背景のワイン画像(後で武田氏から提供) -->
+      <img src="images/hero.png" alt="経営者懇親会 希少なハンガリーワイン会" class="hero__bg-img" fetchpriority="high">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
-      <p class="hero__label">EXECUTIVE WINE SALON</p>
+      <p class="hero__label">EXECUTIVE WINE SALON &nbsp;&#x1F1ED;&#x1F1FA;&nbsp; HUNGARY</p>
       <h1 class="hero__title">
         経営者のための、<br>ハンガリーワイン会
       </h1>
       <p class="hero__subtitle">20名限定。希少なハンガリーワインと、知性ある対話。</p>
       <p class="hero__meta">
-        2026.5.25(MON)&nbsp;&nbsp;18:30 OPEN<br>
+        2026.5.25(MON)&nbsp;&nbsp;19:00 START<br>
         渋谷 The Place ラウンジ
       </p>
       <a href="#form" class="btn btn--primary hero__cta" id="hero-cta">参加を申し込む</a>
@@ -139,9 +146,20 @@
         むしろ希少性を高めています。<br>
         今このタイミングで知ることに、確かな価値があります。</p>
       </div>
-      <!-- [画像差し替え]: ハンガリーのワイン産地風景 or ボトル写真(後で武田氏から提供) -->
-      <div class="image-placeholder" aria-label="ハンガリーワイン産地の画像（後日差し替え予定）">
-        <span>ハンガリーワイン産地 / ボトル写真</span>
+      <!-- ハンガリー統計バッジ -->
+      <div class="hungary-facts">
+        <div class="hungary-fact">
+          <span class="hungary-fact__num">1000<small>年以上</small></span>
+          <span class="hungary-fact__label">ワイン醸造の歴史</span>
+        </div>
+        <div class="hungary-fact">
+          <span class="hungary-fact__num">22</span>
+          <span class="hungary-fact__label">ワイン産地</span>
+        </div>
+        <div class="hungary-fact">
+          <span class="hungary-fact__num">UNESCO</span>
+          <span class="hungary-fact__label">トカイ世界遺産登録</span>
+        </div>
       </div>
     </div>
   </section>
@@ -151,9 +169,8 @@
     <div class="container">
       <h2 class="section__title">ワイン提供・運営</h2>
       <div class="organizer__inner">
-        <!-- [画像差し替え]: IZAのロゴ または ワインボトル群の画像(後で武田氏から提供) -->
-        <div class="image-placeholder image-placeholder--logo" aria-label="IZA株式会社ロゴ（後日差し替え予定）">
-          <span>IZA株式会社 ロゴ</span>
+        <div class="organizer__logo-area">
+          <div class="organizer__logo-text">IZA</div>
         </div>
         <div class="organizer__text">
           <p class="organizer__name">IZA株式会社</p>
@@ -202,16 +219,51 @@
       <h2 class="section__title">当日ご提供するワイン</h2>
       <div class="section__body">
         <p>ハンガリー各産地から厳選したワインをご用意します。</p>
-        <p>世界三大貴腐ワインの一つ「トカイ」、<br>
-        火山性土壌が育む白ワイン、エゲル産の重厚な赤ワインなど、<br>
+        <p>世界三大貴腐ワインの一つ「トカイ・アスー」、<br>
+        火山性土壌が育む白ワイン、エゲル産の爽やかな白など、<br>
         ハンガリーワインの多様性を体験いただけます。</p>
-        <p>銘柄の詳細は、当日のお楽しみとさせていただきます。</p>
       </div>
-      <!-- [画像差し替え]: ボトル/グラスのカタログ的グリッド配置(3〜6枚)。後で武田氏から提供 -->
       <div class="wine-grid">
-        <div class="image-placeholder image-placeholder--wine" aria-label="ワインボトル画像1（後日差し替え予定）"><span>ワイン画像 1</span></div>
-        <div class="image-placeholder image-placeholder--wine" aria-label="ワインボトル画像2（後日差し替え予定）"><span>ワイン画像 2</span></div>
-        <div class="image-placeholder image-placeholder--wine" aria-label="ワインボトル画像3（後日差し替え予定）"><span>ワイン画像 3</span></div>
+        <div class="wine-card">
+          <div class="wine-card__img-wrap">
+            <img src="images/wine-gotz-furmint.jpg" alt="GÖTZ Tokaji Furmint Semi-Sweet" loading="lazy" class="wine-card__img">
+          </div>
+          <div class="wine-card__body">
+            <p class="wine-card__region">Tokaj / Hungary</p>
+            <p class="wine-card__name">GÖTZ Tokaji Furmint</p>
+            <p class="wine-card__desc">フルミント種100%。蜜のような甘みと爽やかな酸が調和する、トカイの白ワイン。</p>
+          </div>
+        </div>
+        <div class="wine-card">
+          <div class="wine-card__img-wrap">
+            <img src="images/wine-tokaji-aszu.jpg" alt="Tokaji Aszú 6 Puttonyos" loading="lazy" class="wine-card__img">
+          </div>
+          <div class="wine-card__body">
+            <p class="wine-card__region">Tokaj / Hungary</p>
+            <p class="wine-card__name">Tokaji Aszú 6 Puttonyos</p>
+            <p class="wine-card__desc">世界三大貴腐ワインの最高峰。琥珀色に輝く、王侯貴族が愛した甘口の至宝。</p>
+          </div>
+        </div>
+        <div class="wine-card">
+          <div class="wine-card__img-wrap">
+            <img src="images/wine-napbor.png" alt="NAPBOR Egri Csillag 2022" loading="lazy" class="wine-card__img">
+          </div>
+          <div class="wine-card__body">
+            <p class="wine-card__region">Eger / Hungary</p>
+            <p class="wine-card__name">NAPBOR Egri Csillag 2022</p>
+            <p class="wine-card__desc">「太陽のワイン」。エゲル産クールクライメート白。火山性土壌が生む鮮烈なミネラル感。</p>
+          </div>
+        </div>
+        <div class="wine-card">
+          <div class="wine-card__img-wrap">
+            <img src="images/wine-tokaji-szamorodni.webp" alt="Tokaji Szamorodni Édes" loading="lazy" class="wine-card__img">
+          </div>
+          <div class="wine-card__body">
+            <p class="wine-card__region">Tokaj / Hungary</p>
+            <p class="wine-card__name">Tokaji Szamorodni</p>
+            <p class="wine-card__desc">「そのままに」を意味するポーランド語が語源。貴腐ブドウを自然のまま醸した希少な甘口。</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -239,7 +291,6 @@
           </p>
           <a href="https://maps.app.goo.gl/hjdQd2FqoygSBybW6" target="_blank" rel="noopener noreferrer" class="venue__map-link">Google マップで見る</a>
         </div>
-        <!-- [画像差し替え]: 会場の雰囲気写真 1〜3枚(後で提供) -->
         <div class="image-placeholder image-placeholder--venue" aria-label="会場の雰囲気写真（後日差し替え予定）">
           <span>会場の雰囲気写真</span>
         </div>
