@@ -51,7 +51,7 @@ if (applyForm) {
   applyForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const fields = ['name', 'furigana', 'email', 'tel', 'company', 'position', 'payment'];
+    const fields = ['name', 'furigana', 'email', 'tel', 'company', 'position', 'payment', 'source'];
     clearAllErrors(fields);
 
     const name     = document.getElementById('name').value.trim();
@@ -62,6 +62,7 @@ if (applyForm) {
     const position = document.getElementById('position').value.trim();
     const industry = document.getElementById('industry').value.trim();
     const payment  = document.querySelector('input[name="payment"]:checked');
+    const source   = document.getElementById('source').value;
     const remarks  = document.getElementById('remarks').value.trim();
 
     let hasError = false;
@@ -75,6 +76,7 @@ if (applyForm) {
     if (!company)  { showError('company', '会社名を入力してください'); hasError = true; }
     if (!position) { showError('position', '役職を入力してください'); hasError = true; }
     if (!payment)  { showError('payment', '決済方法を選択してください'); hasError = true; }
+    if (!source)   { showError('source', 'きっかけを選択してください'); hasError = true; }
 
     if (hasError) return;
 
@@ -100,6 +102,7 @@ if (applyForm) {
       position,
       industry,
       payment:  payment.value,
+      source,
       remarks,
       timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
     };

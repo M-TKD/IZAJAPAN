@@ -512,6 +512,21 @@
           </fieldset>
         </div>
         <div class="form-group">
+          <label for="source" class="form-label">このワイン会を知ったきっかけ <span class="required">必須</span></label>
+          <select id="source" name="source" class="form-input form-select" required>
+            <option value="" disabled selected>―― 選択してください ――</option>
+            <option value="SNS(インスタグラム)">SNS（インスタグラム）</option>
+            <option value="SNS(その他)">SNS（その他）</option>
+            <option value="知人・紹介">知人・紹介</option>
+            <option value="メールマガジン">メールマガジン</option>
+            <option value="イベントサイト">イベントサイト（Peatixなど）</option>
+            <option value="検索（Googleなど）">検索（Googleなど）</option>
+            <option value="以前参加したことがある">以前参加したことがある</option>
+            <option value="その他">その他</option>
+          </select>
+          <span class="form-error" id="source-error"></span>
+        </div>
+        <div class="form-group">
           <label for="remarks" class="form-label">備考 <span class="optional">任意</span></label>
           <textarea id="remarks" name="remarks" class="form-textarea" rows="4" placeholder="領収書が必要な場合は宛名をご記入ください。アレルギー等もこちらにご記入ください。"></textarea>
         </div>
@@ -547,8 +562,8 @@
         <details class="faq-item">
           <summary class="faq-question">同伴者は連れて行けますか?</summary>
           <div class="faq-answer">
-            <p>本会の趣旨により、<br>
-            原則お一人でのご参加とさせていただいております。</p>
+            <p>同伴者とのご参加は可能です。<br>
+            お手数ですが、同伴者の方の分も別途お申し込みいただけますようお願いいたします。</p>
           </div>
         </details>
         <details class="faq-item">
