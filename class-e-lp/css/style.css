@@ -132,12 +132,6 @@ ul {
   margin-bottom: 0;
 }
 
-.section__lead {
-  margin-bottom: 32px;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
 /* ---------- ヒーロー ---------- */
 .hero {
   position: relative;
@@ -147,15 +141,6 @@ ul {
   justify-content: center;
   overflow: hidden;
   background-color: var(--color-bg-primary);
-}
-
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 85%, rgba(201, 184, 144, 0.08) 0%, transparent 60%),
-    linear-gradient(135deg, rgba(201, 184, 144, 0.04) 0%, transparent 50%);
-  /* [画像差し替え]: background-image: url('../images/hero.webp'); background-size: cover; background-position: center; */
 }
 
 .hero__overlay {
@@ -181,6 +166,24 @@ ul {
   margin-bottom: 24px;
   text-transform: uppercase;
 }
+
+.hero__flag {
+  display: inline-flex;
+  width: 18px;
+  height: 12px;
+  vertical-align: middle;
+  border: 1px solid rgba(232, 232, 232, 0.4);
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.hero__flag-stripe {
+  flex: 1;
+  display: block;
+}
+.hero__flag-stripe--red   { background: #CE2939; }
+.hero__flag-stripe--white { background: #FFFFFF; }
+.hero__flag-stripe--green { background: #477050; }
 
 .hero__title {
   font-family: var(--font-serif-ja);
@@ -301,20 +304,6 @@ ul {
 .image-placeholder--venue {
   min-height: 240px;
   margin-top: 0;
-}
-
-/* ---------- ワイングリッド ---------- */
-.wine-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 32px;
-}
-
-@media (max-width: 600px) {
-  .wine-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ---------- 主催者 ---------- */
@@ -986,6 +975,9 @@ details[open] .faq-question::after {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 85%, rgba(201, 184, 144, 0.08) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(201, 184, 144, 0.04) 0%, transparent 50%);
 }
 
 /* ---------- ハンガリーファクト ---------- */
