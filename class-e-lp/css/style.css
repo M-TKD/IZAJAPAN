@@ -1284,3 +1284,11 @@ details[open] .faq-question::after {
     height: 200px;
   }
 }
+
+/* ---------- ワイングリッド 7本対応 ---------- */
+/* 7枚の場合は3列表示（最後の行は左寄せ） */
+@media (min-width: 900px) {
+  .wine-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
