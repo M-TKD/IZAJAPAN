@@ -1061,20 +1061,22 @@ details[open] .faq-question::after {
 
 .wine-card__img-wrap {
   width: 100%;
-  aspect-ratio: 3 / 5;
+  height: 320px;
   overflow: hidden;
   background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
 }
 
 .wine-card__img {
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
+  max-height: 288px;
   object-fit: contain;
-  object-position: center;
-  padding: 12px 16px;
+  object-position: center bottom;
   transition: transform 0.4s ease;
 }
 
