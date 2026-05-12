@@ -1295,3 +1295,18 @@ details[open] .faq-question::after {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ---------- フッターロゴ ---------- */
+.footer__logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer__logo {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* 黒ロゴを白に反転 */
+  opacity: 0.9;
+}
