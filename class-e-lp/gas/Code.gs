@@ -16,8 +16,8 @@
 // ============================================================
 // 設定値
 // ============================================================
-const SPREADSHEET_ID = '[YOUR_SPREADSHEET_ID]'; // スプレッドシートID
-const NOTIFY_EMAIL   = '[IZA_NOTIFY_EMAIL]';    // 通知先メールアドレス
+const SPREADSHEET_ID = '1LpZ8TeazaBmySBqusAF-WdQAkkoEqxSo7O6E2zwx4lo'; // スプレッドシートID
+const NOTIFY_EMAIL   = 'iza.japan2025@gmail.com,masashi523@gmail.com'; // 通知先メールアドレス（複数）
 const APPLY_SHEET    = '申込フォーム';
 const CONTACT_SHEET  = 'お問い合わせ';
 
