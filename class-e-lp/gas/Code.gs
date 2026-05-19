@@ -136,7 +136,6 @@ function sendApplyAutoReply(data) {
 
   const paymentMap = {
     'クレジットカード': '■ クレジットカード決済\n下記リンクよりお手続きください。\nhttps://square.link/u/DGogiIKU?src=sheet',
-    'PayPay':         '■ PayPay決済\n詳細は別途メールにてご案内いたします。',
     '銀行振込':       '■ 銀行振込\n三井住友銀行 トランク支店(店番号055)\n普通 0133792\nIZA株式会社(イザカブシキガイシャ)\n\n※5月24日(土)着金分まで事前決済扱いとなります。',
     '当日現金':       '■ 当日現金\n当日受付にて ¥16,000 をお支払いください。'
   };
