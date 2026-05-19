@@ -7,10 +7,10 @@
 
 /* ============================================================
    Google Apps Script エンドポイント
-   ※ 後でデプロイ後のURLに差し替えてください
+   ※ 申込・問い合わせとも同一スクリプトで type で振り分け
    ============================================================ */
-const GAS_APPLY_URL   = 'https://script.google.com/macros/s/[GAS_APPLY_SCRIPT_ID]/exec';
-const GAS_CONTACT_URL = 'https://script.google.com/macros/s/[GAS_CONTACT_SCRIPT_ID]/exec';
+const GAS_APPLY_URL   = 'https://script.google.com/macros/s/AKfycbxTt-Bmmyw7Ws9zh6K5pNJ-UqFlKM6cGQ5-WczGirkc41SXSWIEtGJ-32aP7ADrwzDD/exec';
+const GAS_CONTACT_URL = 'https://script.google.com/macros/s/AKfycbxTt-Bmmyw7Ws9zh6K5pNJ-UqFlKM6cGQ5-WczGirkc41SXSWIEtGJ-32aP7ADrwzDD/exec';
 
 /* ============================================================
    ユーティリティ
