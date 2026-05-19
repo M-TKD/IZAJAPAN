@@ -31,6 +31,11 @@ const NOTIFY_EMAILS  = ['iza.japan2025@gmail.com', 'masashi523@gmail.com'];
 const APPLY_SHEET    = '申込フォーム';
 const CONTACT_SHEET  = 'お問い合わせ';
 
+// 送信元アドレス（GmailのエイリアスとしてGAS実行者アカウントに登録が必要）
+// 未登録の場合、from オプションは無視されて実行者の自分のアドレスから送信される
+const FROM_EMAIL = 'iza.japan2025@gmail.com';
+const FROM_NAME  = '経営者交流ハンガリーワイン会 運営事務局';
+
 // ============================================================
 // ヘルパー
 // ============================================================
@@ -167,7 +172,9 @@ ${paymentInfo}
 IZA株式会社`;
 
   GmailApp.sendEmail(data.email, subject, body, {
-    name: '経営者交流ハンガリーワイン会 運営事務局'
+    name: FROM_NAME,
+    from: FROM_EMAIL,
+    replyTo: FROM_EMAIL
   });
 }
 
@@ -192,7 +199,11 @@ function sendApplyNotification(data) {
 
   NOTIFY_EMAILS.forEach(to => {
     try {
-      GmailApp.sendEmail(to, subject, body, { name: 'Class-E LP 申込通知' });
+      GmailApp.sendEmail(to, subject, body, {
+        name: 'Class-E LP 申込通知',
+        from: FROM_EMAIL,
+        replyTo: FROM_EMAIL
+      });
     } catch (err) {
       console.error('申込通知メール送信失敗 (' + to + '):', err);
     }
@@ -242,7 +253,9 @@ ${data.message}
 IZA株式会社`;
 
   GmailApp.sendEmail(data.email, subject, body, {
-    name: '経営者交流ハンガリーワイン会 運営事務局'
+    name: FROM_NAME,
+    from: FROM_EMAIL,
+    replyTo: FROM_EMAIL
   });
 }
 
@@ -264,6 +277,7 @@ ${data.message}`;
     try {
       GmailApp.sendEmail(to, subject, body, {
         name: 'Class-E LP お問い合わせ通知',
+        from: FROM_EMAIL,
         replyTo: data.email
       });
     } catch (err) {
