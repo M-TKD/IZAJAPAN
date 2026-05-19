@@ -31,10 +31,13 @@ const NOTIFY_EMAILS  = ['iza.japan2025@gmail.com', 'masashi523@gmail.com'];
 const APPLY_SHEET    = '申込フォーム';
 const CONTACT_SHEET  = 'お問い合わせ';
 
-// 送信元アドレス（GmailのエイリアスとしてGAS実行者アカウントに登録が必要）
-// 未登録の場合、from オプションは無視されて実行者の自分のアドレスから送信される
-const FROM_EMAIL = 'iza.japan2025@gmail.com';
-const FROM_NAME  = '経営者交流ハンガリーワイン会 運営事務局';
+// 差出人表示名（受信者の一覧画面で目立つ部分）
+const FROM_NAME = '経営者交流ハンガリーワイン会 運営事務局';
+
+// 返信先アドレス（受信者が「返信」を押すとここ宛になる）
+// GASは実行者のGmailから送信される仕様のため、From アドレスの上書きは
+// Gmailエイリアス登録なしには行えない。代わりに Reply-To を運営アドレスに集約。
+const REPLY_TO_EMAIL = 'iza.japan2025@gmail.com';
 
 // ============================================================
 // ヘルパー
@@ -173,8 +176,7 @@ IZA株式会社`;
 
   GmailApp.sendEmail(data.email, subject, body, {
     name: FROM_NAME,
-    from: FROM_EMAIL,
-    replyTo: FROM_EMAIL
+    replyTo: REPLY_TO_EMAIL
   });
 }
 
@@ -201,8 +203,7 @@ function sendApplyNotification(data) {
     try {
       GmailApp.sendEmail(to, subject, body, {
         name: 'Class-E LP 申込通知',
-        from: FROM_EMAIL,
-        replyTo: FROM_EMAIL
+        replyTo: REPLY_TO_EMAIL
       });
     } catch (err) {
       console.error('申込通知メール送信失敗 (' + to + '):', err);
@@ -254,8 +255,7 @@ IZA株式会社`;
 
   GmailApp.sendEmail(data.email, subject, body, {
     name: FROM_NAME,
-    from: FROM_EMAIL,
-    replyTo: FROM_EMAIL
+    replyTo: REPLY_TO_EMAIL
   });
 }
 
@@ -277,7 +277,6 @@ ${data.message}`;
     try {
       GmailApp.sendEmail(to, subject, body, {
         name: 'Class-E LP お問い合わせ通知',
-        from: FROM_EMAIL,
         replyTo: data.email
       });
     } catch (err) {
