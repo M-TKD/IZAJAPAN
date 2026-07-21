@@ -17,6 +17,13 @@ IZA株式会社のウェブプロジェクトリポジトリです。
 フォーム連携には Google Apps Script のデプロイが必要です。
 `class-e-lp/gas/README.md` を参照してください。
 
+### instagram-operation-manual
+
+ワイン初心者向けハンガリーワイン会の Instagram 集客・運用マニュアル（引き継ぎ可能な汎用ドキュメント）
+
+- 目次: `instagram-operation-manual/README.md`
+- 構成: ターゲット/デザインGL/コンテンツ設計/運用フロー/KPI・広告/AIプロンプト集 ほか
+
 #### 後日差し替え予定
 
 - `class-e-lp/images/hero.webp` — ヒーロー背景画像
