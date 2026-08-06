@@ -5,55 +5,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0A0A0F; --navy2:#1A1A2E; --gold:#C9B890; --wine:#CE2939;
-    --ivory:#F5F1E6; --text:#E8E8E8;
+    /* 確定ブランドカラー（マニュアル5-1） */
+    --bordeaux:#5A1425; --bordeaux-deep:#3E0E19; --gold:#D4A24E; --gold-onlight:#A87A2C;
+    --flagred:#CD2A3E; --green:#436F4D;
+    --white:#FAF6F2; --brown:#2A1418; --text:#FAF6F2; --text-mute:#E0C9CE;
     --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif; --en:'Cinzel',serif;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#2b2b30;font-family:var(--sans);color:#222;padding:32px 16px 64px;}
+  body{background:#241016;font-family:var(--sans);color:#222;padding:32px 16px 64px;}
   .wrap{max-width:1120px;margin:0 auto;}
-  h1.page{color:#f2f2f2;font-family:var(--serif);font-weight:500;font-size:22px;text-align:center;margin-bottom:6px;}
-  p.note{color:#b9b9c2;text-align:center;font-size:13px;margin-bottom:28px;line-height:1.7;}
+  h1.page{color:#FAF6F2;font-family:var(--serif);font-weight:500;font-size:22px;text-align:center;margin-bottom:6px;}
+  p.note{color:#D7BEC4;text-align:center;font-size:13px;margin-bottom:28px;line-height:1.7;}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;}
   /* 4:5 slide */
   .slide{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45);}
-  .pad{position:absolute;inset:0;padding:9% 9%;display:flex;flex-direction:column;}
-  .dark{background:radial-gradient(120% 90% at 50% 0%,#20203a 0%,var(--navy2) 45%,var(--navy) 100%);color:var(--text);}
-  .light{background:linear-gradient(160deg,#fbf8ef 0%,var(--ivory) 100%);color:#23222a;}
-  .kicker{font-family:var(--en);letter-spacing:.18em;font-size:11px;color:var(--gold);text-transform:uppercase;}
+  .pad{position:absolute;inset:0;padding:8.5% 8.5% 13%;display:flex;flex-direction:column;}
+  .dark{background:radial-gradient(120% 90% at 50% 0%,#6E1A2E 0%,var(--bordeaux) 45%,var(--bordeaux-deep) 100%);color:var(--text);}
+  .light{background:linear-gradient(160deg,#FFFDFB 0%,var(--white) 100%);color:var(--brown);}
+  .kicker{font-family:var(--en);letter-spacing:.14em;font-size:10px;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
   .rule{width:34px;height:2px;background:var(--gold);margin:10px 0 14px;}
-  .light .rule{background:#b89a45;}
+  .light .rule{background:var(--gold-onlight);}
   .cover-title{font-family:var(--serif);font-weight:700;font-size:27px;line-height:1.42;letter-spacing:.01em;}
-  .cover-sub{font-family:var(--sans);font-weight:300;font-size:12.5px;line-height:1.7;color:#c9c9d4;margin-top:auto;}
-  .badge{display:inline-block;font-family:var(--en);font-size:11px;letter-spacing:.14em;color:var(--gold);border:1px solid rgba(201,184,144,.5);border-radius:2px;padding:4px 9px;}
+  .cover-sub{font-family:var(--sans);font-weight:300;font-size:12.5px;line-height:1.7;color:var(--text-mute);margin-top:auto;}
+  .badge{display:inline-block;font-family:var(--en);font-size:11px;letter-spacing:.14em;color:var(--gold);border:1px solid rgba(212,162,78,.55);border-radius:2px;padding:4px 9px;}
   .num{font-family:var(--en);font-size:13px;color:var(--gold);letter-spacing:.1em;}
-  .light .num{color:#b89a45;}
+  .light .num{color:var(--gold-onlight);}
   .h-term{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.35;margin-top:6px;}
-  .h-en{font-family:var(--en);font-size:12px;letter-spacing:.16em;color:#9a8f6a;margin-top:4px;}
-  .light .h-en{color:#a08a4d;}
+  .h-en{font-family:var(--en);font-size:12px;letter-spacing:.16em;color:#B98F55;margin-top:4px;}
+  .light .h-en{color:var(--gold-onlight);}
   .body{font-family:var(--sans);font-weight:400;font-size:13px;line-height:1.85;margin-top:16px;}
-  .light .body{color:#3b3a42;}
-  .tip{font-family:var(--sans);font-size:11.5px;line-height:1.7;margin-top:auto;padding-top:12px;color:#c9c9d4;border-top:1px solid rgba(255,255,255,.12);}
-  .light .tip{color:#6b6656;border-top:1px solid rgba(0,0,0,.12);}
+  .light .body{color:#4A3138;}
+  .tip{font-family:var(--sans);font-size:11.5px;line-height:1.7;margin-top:auto;padding-top:12px;color:var(--text-mute);border-top:1px solid rgba(250,246,242,.16);}
+  .light .tip{color:#7A5A60;border-top:1px solid rgba(42,20,24,.14);}
   .foot{position:absolute;left:9%;right:9%;bottom:6%;display:flex;justify-content:space-between;align-items:center;}
-  .logo{font-family:var(--en);font-size:12px;letter-spacing:.22em;color:var(--gold);}
-  .light .logo{color:#8a7636;}
-  .pageno{font-family:var(--en);font-size:11px;color:rgba(255,255,255,.4);}
-  .light .pageno{color:rgba(0,0,0,.35);}
+  .logo{font-family:var(--en);font-size:9.5px;letter-spacing:.2em;color:var(--gold);}
+  .light .logo{color:var(--gold-onlight);}
+  .pageno{font-family:var(--en);font-size:11px;color:rgba(250,246,242,.45);}
+  .light .pageno{color:rgba(42,20,24,.35);}
   /* CTA slide */
   .cta-lead{font-family:var(--serif);font-weight:500;font-size:20px;line-height:1.5;}
   .cta-actions{margin-top:18px;display:flex;flex-direction:column;gap:9px;}
-  .chip{font-family:var(--sans);font-size:12px;line-height:1.5;padding:9px 12px;border:1px solid rgba(201,184,144,.4);border-radius:4px;color:var(--text);}
+  .chip{font-family:var(--sans);font-size:12px;line-height:1.5;padding:9px 12px;border:1px solid rgba(212,162,78,.45);border-radius:4px;color:var(--text);}
   .chip b{color:var(--gold);font-weight:500;}
-  .cta-btn{margin-top:16px;text-align:center;font-family:var(--sans);font-weight:500;font-size:13px;color:var(--navy);background:var(--gold);border-radius:4px;padding:11px;}
-  .save{font-family:var(--sans);font-size:11px;color:#c9c9d4;margin-top:12px;text-align:center;}
+  .cta-btn{margin-top:16px;text-align:center;font-family:var(--sans);font-weight:500;font-size:13px;color:var(--bordeaux);background:var(--gold);border-radius:4px;padding:11px;}
+  .save{font-family:var(--sans);font-size:11px;color:var(--text-mute);margin-top:12px;text-align:center;}
   /* caption */
   .caption{margin-top:36px;background:#fff;border-radius:10px;padding:24px 26px;max-width:640px;}
-  .caption h2{font-family:var(--serif);font-size:15px;margin-bottom:12px;color:#1a1a2e;}
+  .caption h2{font-family:var(--serif);font-size:15px;margin-bottom:12px;color:var(--bordeaux);}
   .caption pre{white-space:pre-wrap;font-family:var(--sans);font-size:13px;line-height:1.9;color:#2a2a2a;}
   .tags{color:#3b5a9a;}
-  .legend{margin-top:26px;max-width:640px;color:#cfcfd6;font-size:12px;line-height:1.9;}
-  .legend b{color:#f2f2f2;}
+  .legend{margin-top:26px;max-width:640px;color:#E0C9CE;font-size:12px;line-height:1.9;}
+  .legend b{color:var(--white);}
   .swatches{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
   .sw{width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,255,255,.2);}
 </style>
@@ -72,7 +74,7 @@
         <div class="cover-title">ワイン選びで<br>もう迷わない。<br>最初に覚える<br>3つの言葉</div>
         <div class="cover-sub">「渋い」「酸っぱい」だけじゃない。<br>味を伝える“ものさし”を知ると、<br>お店での一杯がぐっと楽しくなる。</div>
       </div>
-      <div class="foot"><span class="logo">IZA</span><span class="pageno">01 / 05</span></div>
+      <div class="foot"><span class="logo">IZA WINE CLUB</span><span class="pageno">01 / 05</span></div>
     </div>
 
     <!-- 2: 解説①（light） -->
@@ -84,7 +86,7 @@
         <div class="body">口の中がキュッと引き締まる感覚。<br>赤ワインに多く、渋いほど「しっかりした味」に感じます。濃い肉料理と好相性。</div>
         <div class="tip">覚え方：濃いお茶を飲んだあとの、あの感じ。</div>
       </div>
-      <div class="foot"><span class="logo">IZA</span><span class="pageno">02 / 05</span></div>
+      <div class="foot"><span class="logo">IZA WINE CLUB</span><span class="pageno">02 / 05</span></div>
     </div>
 
     <!-- 3: 解説②（dark） -->
@@ -96,7 +98,7 @@
         <div class="body">飲んだときの爽やかさ・キレ。<br>酸味が高いと軽やかで食事が進み、低いとまろやかに感じます。白ワインで分かりやすい。</div>
         <div class="tip">覚え方：レモンを想像すると唾液が出る、あの反応。</div>
       </div>
-      <div class="foot"><span class="logo">IZA</span><span class="pageno">03 / 05</span></div>
+      <div class="foot"><span class="logo">IZA WINE CLUB</span><span class="pageno">03 / 05</span></div>
     </div>
 
     <!-- 4: 解説③（light） -->
@@ -108,7 +110,7 @@
         <div class="body">口に含んだときの“重さ・飲みごたえ”。<br>軽い＝ライトボディ、重い＝フルボディ。<br>迷ったら「濃さ」のイメージでOK。</div>
         <div class="tip">覚え方：低脂肪乳と濃厚牛乳の違い、のような感覚。</div>
       </div>
-      <div class="foot"><span class="logo">IZA</span><span class="pageno">04 / 05</span></div>
+      <div class="foot"><span class="logo">IZA WINE CLUB</span><span class="pageno">04 / 05</span></div>
     </div>
 
     <!-- 5: CTA（dark） -->
@@ -123,7 +125,7 @@
         <div class="cta-btn">次回開催・お申込みはプロフィールから</div>
         <div class="save">この投稿を保存して、当日の予習に。</div>
       </div>
-      <div class="foot"><span class="logo">IZA</span><span class="pageno">05 / 05</span></div>
+      <div class="foot"><span class="logo">IZA WINE CLUB</span><span class="pageno">05 / 05</span></div>
     </div>
 
   </div>
@@ -141,26 +143,27 @@
 
 「渋めで、ボディしっかりめが好きです」——これだけ言えたら、もう初心者には見えません。
 
-IZAのワイン会は、知られざるハンガリーワインを初心者向けに少人数で楽しむ会です。
-知識ゼロ・お一人参加、大歓迎。
+六本木で開いているIZAのワイン会は、知られざるハンガリーワインを
+ワイン初心者向けに楽しむ会です。知識ゼロ・お一人参加、大歓迎。
 
 迷ったとき用に、この投稿を保存しておいてくださいね。
 次回の開催はプロフィールのリンクから。
 
 ──────────
-<span class="tags">#ワイン初心者 #ワインの勉強 #ハンガリーワイン #ワイン会 #東京ワイン会 #渋谷 #ワイン好きと繋がりたい #大人の習い事 #テイスティング #IZAワイン会</span></pre>
+<span class="tags">#ワイン初心者 #ハンガリーワイン #ワインのある暮らし #IZAワインクラブ</span></pre>
+    <p style="margin-top:14px;font-size:12px;line-height:1.8;color:#6b6b6b;">※ハッシュタグは3〜5個の最小構成（マニュアル7-5・11-4）。冒頭の文章に「六本木」「ワイン初心者」「ハンガリーワイン」を自然に含めるほうが、タグを増やすより効きます。</p>
   </div>
 
   <div class="legend">
     <b>このサンプルで使っているブランド要素</b>
     <div class="swatches">
-      <span class="sw" style="background:#0A0A0F" title="#0A0A0F"></span>
-      <span class="sw" style="background:#1A1A2E" title="#1A1A2E"></span>
-      <span class="sw" style="background:#C9B890" title="#C9B890"></span>
-      <span class="sw" style="background:#CE2939" title="#CE2939"></span>
-      <span class="sw" style="background:#F5F1E6" title="#F5F1E6"></span>
+      <span class="sw" style="background:#5A1425" title="#5A1425 ボルドー"></span>
+      <span class="sw" style="background:#FAF6F2" title="#FAF6F2 ウォームホワイト"></span>
+      <span class="sw" style="background:#D4A24E" title="#D4A24E 貴腐ゴールド"></span>
+      <span class="sw" style="background:#CD2A3E" title="#CD2A3E 国旗レッド"></span>
+      <span class="sw" style="background:#436F4D" title="#436F4D 国旗グリーン"></span>
     </div>
-    ・カラー：ディープネイビー／シャンパンゴールド／アイボリー（＋差し色ワインレッド）<br>
+    ・カラー：ボルドー #5A1425 ／ ウォームホワイト #FAF6F2 ／ 貴腐ゴールド #D4A24E（＋差し色 国旗レッド #CD2A3E・少量の国旗グリーン #436F4D）<br>
     ・フォント：見出し Noto Serif JP ／ 本文 Noto Sans JP ／ 英字ラベル Cinzel<br>
     ・構図：4:5・安全マージン・ロゴとページ番号を全ページ固定・濃×淡の市松配置でシリーズ感<br>
     ・設計：1枚目で止める → 3ステップ解説 → 保存＆申込のCTA
