@@ -1,0 +1,213 @@
+<meta charset="utf-8">
+<title>Peatixカバー画像 モックアップ - 8/31 ハンガリーワイン会</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* 確定ブランドカラー（Instagram運用マニュアル 5-1） */
+    --bordeaux:#5A1425; --bordeaux-deep:#3E0E19; --gold:#D4A24E; --gold-onlight:#A87A2C;
+    --flagred:#CD2A3E; --green:#436F4D;
+    --white:#FAF6F2; --brown:#2A1418; --text-mute:#E0C9CE;
+    --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif; --en:'Cinzel',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#241016;font-family:var(--sans);color:#E7D3D8;padding:32px 16px 72px;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  h1.page{color:var(--white);font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:8px;}
+  p.note{font-size:13px;line-height:1.9;margin-bottom:8px;}
+  p.note b{color:var(--white);}
+  h2.sec{color:var(--gold);font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.06em;
+         margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(212,162,78,.3);}
+
+  /* ---- カバー本体：2:1。1440x720 を 1000px 幅で表示 ---- */
+  .cover{position:relative;aspect-ratio:2/1;border-radius:8px;overflow:hidden;
+         box-shadow:0 10px 30px rgba(0,0,0,.5);container-type:inline-size;}
+  .cover.dark{background:
+      radial-gradient(75% 120% at 78% 15%, rgba(212,162,78,.20) 0%, rgba(212,162,78,0) 55%),
+      radial-gradient(120% 120% at 12% 100%, #6E1A2E 0%, var(--bordeaux) 42%, var(--bordeaux-deep) 100%);
+      color:var(--white);}
+  .cover.light{background:linear-gradient(150deg,#FFFDFB 0%,var(--white) 60%,#F3E9E2 100%);color:var(--brown);}
+
+  /* セーフエリア：文字は中央60%に収める（4-2-2 ルール1） */
+  .safe{position:absolute;left:20%;right:20%;top:8%;bottom:8%;
+        display:flex;flex-direction:column;justify-content:center;text-align:center;}
+  .safe.wide{left:14%;right:14%;}
+
+  .kicker{font-family:var(--en);letter-spacing:.22em;font-size:2.4cqw;color:var(--gold);text-transform:uppercase;}
+  .light .kicker{color:var(--gold-onlight);}
+  .rule{width:5.5cqw;height:2px;background:var(--gold);margin:2.4cqw auto;}
+  .light .rule{background:var(--gold-onlight);}
+  .lead{font-family:var(--serif);font-weight:500;font-size:3.0cqw;line-height:1.6;color:var(--text-mute);}
+  .light .lead{color:#6B4A50;}
+  .title{font-family:var(--serif);font-weight:700;font-size:5.0cqw;line-height:1.45;letter-spacing:.01em;margin-top:1.2cqw;}
+  .title em{font-style:normal;color:var(--gold);}
+  .light .title em{color:var(--gold-onlight);}
+  .meta{font-family:var(--sans);font-weight:400;font-size:2.7cqw;line-height:1.9;margin-top:3.0cqw;letter-spacing:.02em;}
+  .meta .sep{opacity:.45;margin:0 .7em;}
+  .tagline{display:inline-block;font-family:var(--sans);font-weight:500;font-size:2.3cqw;
+           color:var(--gold);border:1px solid rgba(212,162,78,.55);border-radius:2px;
+           padding:.8cqw 2.2cqw;margin-top:2.6cqw;letter-spacing:.04em;}
+  .light .tagline{color:#8C2233;border-color:rgba(205,42,62,.45);}
+
+  .logo{position:absolute;left:0;right:0;bottom:4.5%;text-align:center;
+        font-family:var(--en);font-size:1.9cqw;letter-spacing:.3em;color:var(--gold);opacity:.85;}
+  .light .logo{color:var(--gold-onlight);}
+
+  /* セーフエリアのガイド表示 */
+  .guides .safe{outline:1px dashed rgba(212,162,78,.5);}
+  .guides .cover::after{content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(205,42,62,.16) 0 20%,transparent 20% 80%,rgba(205,42,62,.16) 80% 100%);}
+
+  /* サムネイル確認（一覧での見え方） */
+  .thumbs{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;}
+  .thumb{width:300px;}
+  .thumb .cover{border-radius:5px;box-shadow:0 4px 12px rgba(0,0,0,.4);}
+  .thumb p{font-size:11.5px;margin-top:8px;color:#C9AAB1;}
+  .crop{width:300px;height:150px;overflow:hidden;border-radius:5px;position:relative;}
+  .crop .cover{position:absolute;width:400px;height:200px;left:-50px;top:-25px;border-radius:0;}
+
+  ul.rules{font-size:13px;line-height:2;padding-left:1.2em;}
+  ul.rules b{color:var(--white);}
+  .warn{background:rgba(205,42,62,.12);border-left:3px solid var(--flagred);padding:12px 16px;
+        font-size:13px;line-height:1.9;border-radius:0 4px 4px 0;margin-top:12px;}
+  .warn b{color:#FFC3CB;}
+  .swatches{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:11.5px;}
+  .sw{width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,255,255,.2);}
+  .toggle{margin:14px 0 10px;font-size:13px;}
+</style>
+
+<div class="wrap">
+  <h1 class="page">Peatix カバー画像 モックアップ｜8/31 ハンガリーワイン会</h1>
+  <p class="note">
+    比率 <b>2:1</b>（1440×720px 想定）。Instagram運用マニュアル 5-1 のカラー、5-2 の書体で組んでいます。<br>
+    Canvaで作り直すときの見本として使ってください。<b>正確な推奨サイズと容量上限は、Peatixの作成画面の表示に従ってください。</b>
+  </p>
+
+  <h2 class="sec">案A｜濃色（ボルドー）— 推奨</h2>
+  <div class="cover dark">
+    <div class="safe">
+      <div class="kicker">Hungarian Wine</div>
+      <div class="rule"></div>
+      <div class="lead">ワインを、甘口から始めてもいい。</div>
+      <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+      <div class="meta">
+        8月31日（月）19:00<span class="sep">|</span>東京・六本木
+      </div>
+      <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+    </div>
+    <div class="logo">IZA WINE CLUB</div>
+  </div>
+
+  <h2 class="sec">案B｜明色（ウォームホワイト）</h2>
+  <div class="cover light">
+    <div class="safe">
+      <div class="kicker">Hungarian Wine</div>
+      <div class="rule"></div>
+      <div class="lead">ワインを、甘口から始めてもいい。</div>
+      <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+      <div class="meta">
+        8月31日（月）19:00<span class="sep">|</span>東京・六本木
+      </div>
+      <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+    </div>
+    <div class="logo">IZA WINE CLUB</div>
+  </div>
+
+  <h2 class="sec">セーフエリアの確認</h2>
+  <p class="note">
+    赤くかぶった左右の帯は<b>切り落とされる可能性がある範囲</b>です。カバー画像は一覧・アプリ・SNSシェアで違う比率に切られるため、
+    <b>文字は中央60%（破線の内側）に収めます。</b>
+  </p>
+  <div class="guides" style="margin-top:14px;">
+    <div class="cover dark">
+      <div class="safe">
+        <div class="kicker">Hungarian Wine</div>
+        <div class="rule"></div>
+        <div class="lead">ワインを、甘口から始めてもいい。</div>
+        <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+        <div class="meta">8月31日（月）19:00<span class="sep">|</span>東京・六本木</div>
+        <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+      </div>
+      <div class="logo">IZA WINE CLUB</div>
+    </div>
+  </div>
+
+  <h2 class="sec">サムネイルでの見え方（横300px）</h2>
+  <p class="note">
+    イベント一覧では、このくらいの大きさまで縮みます。<b>この状態で日付が読めるかどうかが合格基準です。</b>
+    右端は中央だけを切り出した場合の想定です。
+  </p>
+  <div class="thumbs">
+    <div class="thumb">
+      <div class="cover dark">
+        <div class="safe">
+          <div class="kicker">Hungarian Wine</div>
+          <div class="rule"></div>
+          <div class="lead">ワインを、甘口から始めてもいい。</div>
+          <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+          <div class="meta">8月31日（月）19:00<span class="sep">|</span>東京・六本木</div>
+          <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+        </div>
+        <div class="logo">IZA WINE CLUB</div>
+      </div>
+      <p>案A｜一覧サムネイル</p>
+    </div>
+    <div class="thumb">
+      <div class="cover light">
+        <div class="safe">
+          <div class="kicker">Hungarian Wine</div>
+          <div class="rule"></div>
+          <div class="lead">ワインを、甘口から始めてもいい。</div>
+          <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+          <div class="meta">8月31日（月）19:00<span class="sep">|</span>東京・六本木</div>
+          <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+        </div>
+        <div class="logo">IZA WINE CLUB</div>
+      </div>
+      <p>案B｜一覧サムネイル</p>
+    </div>
+    <div class="thumb">
+      <div class="crop">
+        <div class="cover dark">
+          <div class="safe">
+            <div class="kicker">Hungarian Wine</div>
+            <div class="rule"></div>
+            <div class="lead">ワインを、甘口から始めてもいい。</div>
+            <div class="title">上質だけど、やさしい。<br><em>気軽に楽しむハンガリーワイン会</em></div>
+            <div class="meta">8月31日（月）19:00<span class="sep">|</span>東京・六本木</div>
+            <div><span class="tagline">ワインが苦手な方も／お一人参加歓迎</span></div>
+          </div>
+          <div class="logo">IZA WINE CLUB</div>
+        </div>
+      </div>
+      <p>中央だけ切り出された場合（文字が残る）</p>
+    </div>
+  </div>
+
+  <h2 class="sec">制作ルール</h2>
+  <ul class="rules">
+    <li><b>入れる情報は4つだけ</b> … ①会の名前 ②日付・時刻 ③場所 ④「ワインが苦手な方も／お一人参加歓迎」</li>
+    <li><b>会費は入れない</b> … 8,000円と7,000円（公式LINE登録）の二段階は画像で説明しきれません。チケット欄で伝わります</li>
+    <li><b>文字は中央60%に収める</b> … 端に置いた文字は切られて消えます</li>
+    <li><b>書体は2種類まで</b> … 見出し Noto Serif JP ／ 補助 Noto Sans JP ／ 英字の飾り Cinzel（マニュアル5-2）</li>
+    <li><b>ゴールドは線と小さな面だけ</b> … ベタ塗りで多用すると安っぽくなります（マニュアル5-1）</li>
+    <li><b>会場の写真は使わない</b> … 素材がありません。過去開催の実写は「過去の開催の様子」の明記が要るため、カバー画像には不向きです（マニュアル10-3）</li>
+    <li><b>「初心者」という語は画像に入れない</b> … タイトルのタグと検索キーワードでのみ使います（要項2章）</li>
+  </ul>
+
+  <div class="warn">
+    <b>AI生成画像を使う場合は、必ず目視で確認してください。</b>
+    グラス・ボトルの形が崩れていないか、日本語のテロップが化けていないか。
+    過去に、動画クリエイティブのテロップが文字化けしたまま納品された例があります（Meta広告 運用ガイド 3-1）。
+  </div>
+
+  <h2 class="sec">使用カラー</h2>
+  <div class="swatches">
+    <span class="sw" style="background:#5A1425"></span>ボルドー #5A1425
+    <span class="sw" style="background:#FAF6F2"></span>ウォームホワイト #FAF6F2
+    <span class="sw" style="background:#D4A24E"></span>貴腐ゴールド #D4A24E
+    <span class="sw" style="background:#CD2A3E"></span>国旗レッド #CD2A3E
+    <span class="sw" style="background:#436F4D"></span>国旗グリーン #436F4D
+  </div>
+</div>
