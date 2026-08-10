@@ -49,3 +49,11 @@ Meta広告（Instagram / Facebook）の運用ガイド。広告初心者がこ�
 - Meta Pixel ID: `index.html` 内の `[META_PIXEL_ID]` を差し替え
 - GA4 測定ID: `index.html` 内の `[GA4_MEASUREMENT_ID]` を差し替え
 - 特商法表記: `tokushoho.html` 内の `[要追加情報]` を差し替え
+
+### fb-autopost
+
+Facebookページ自動配信の仕組み(GAS + Facebook Graph API + Claude API)
+
+- コンテンツカレンダー(スプレッドシート)ベースの予約投稿
+- ワイン会告知・ハンガリーワイントピックスの下書き自動生成
+- セットアップは `fb-autopost/README.md` を参照
